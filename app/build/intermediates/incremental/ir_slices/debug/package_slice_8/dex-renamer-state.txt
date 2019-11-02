@@ -1,0 +1,4 @@
+#Sat Nov 02 03:52:09 WAT 2019
+base.0=C\:\\Users\\UGO\\Desktop\\Rush\\RUSH\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
+renamed.0=classes.dex

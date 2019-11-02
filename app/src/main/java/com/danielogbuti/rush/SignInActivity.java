@@ -12,6 +12,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.methods.response.EthBlockNumber;
+import org.web3j.protocol.core.methods.response.EthGasPrice;
+import org.web3j.protocol.core.methods.response.Web3ClientVersion;
+import org.web3j.protocol.http.HttpService;
+
+import java.io.IOException;
+
 public class SignInActivity extends AppCompatActivity {
     private Button loginButton;
     private TextView signUpLink;
@@ -19,12 +27,19 @@ public class SignInActivity extends AppCompatActivity {
     private EditText passwordText;
     private static final int REQUEST_SIGNUP = 0;
     private final String TAG = "akiliHealth";
-
+    connectToEthereum blockchain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        blockchain = new connectToEthereum();
+        if(blockchain.ConnectToEthereum()){
+            Toast.makeText(this, "Successfully connected to blockchain", Toast.LENGTH_SHORT).show();
+            Log.e(TAG,"Succesfully Connected To Block");
+        }else{
+            Log.e(TAG,"Not successful");
+        }
         loginButton = (Button)findViewById(R.id.btn_login);
         signUpLink = (TextView)findViewById(R.id.link_signup);
         emailText = (EditText)findViewById(R.id.input_email);
