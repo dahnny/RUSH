@@ -1,25 +1,19 @@
 package com.danielogbuti.rush;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
-import com.danielogbuti.rush.models.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import android.preference.PreferenceManager;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -28,18 +22,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    public  static final int RequestPermissionCode  = 1;
-    private static final int REQUEST_IMAGE_CAPTURE = 8;
-    private static final String TAG = "fish";
+    private static  int IMAGE_CAPTURE = 0;
 
-    private TextView fullName;
     private CardView report;
-    private CardView progress;
+    private CardView listings;
+    private CardView money;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,22 +37,14 @@ public class Home extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
-        //enableRuntimePermission();
-        Log.i(TAG,"kjxg;dlv");
-        fullName = (TextView)findViewById(R.id.fullName);
-        report = (CardView) findViewById(R.id.report);
-        progress = (CardView)findViewById(R.id.trackProgress);
 
-        User user = Common.currentUser;
-//        if (user.getEmail() != null) {
-//            fullName.setText(user.getEmail());
-//        }
+        report = (CardView)findViewById(R.id.report);
+        listings = (CardView)findViewById(R.id.listings);
+        money = (CardView)findViewById(R.id.money);
 
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG,"...");
                 setupCamera();
             }
         });
@@ -86,28 +68,24 @@ public class Home extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-
-
     private void setupCamera() {
-
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
-        }
+        startActivityForResult(intent,IMAGE_CAPTURE);
+    }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IMAGE_CAPTURE && resultCode == RESULT_OK){
+            Bundle extras = (Bundle) data.getExtras();
 
 
             Intent intent = new Intent(Home.this,PositionActivity.class);
-            intent.putExtra("Tag",extras);
+            intent.putExtra("Tag",(Bitmap)extras.get("data"));
             startActivity(intent);
 
-            Log.i(TAG,"Successful");
         }
     }
-
 
     @Override
     public void onBackPressed() {
