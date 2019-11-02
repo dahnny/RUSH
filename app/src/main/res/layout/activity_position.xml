@@ -7,6 +7,61 @@
     android:orientation="vertical"
     tools:context=".PositionActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_margin="10dp"
+        android:id="@+id/roadImage"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location:"
+            android:textSize="20sp"
+            android:fontFamily = "@font/biryani_semibold"/>
+        <TextView
+            android:id="@+id/locationPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name of location:"
+            android:textSize="15sp"
+            android:fontFamily="@font/biryani_extralight"/>
+
+        <TextView
+            android:id="@+id/latlng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Longitude and Latitude:"
+            android:textSize="15sp"
+            android:fontFamily="@font/biryani_extralight"/>
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="30dp"
+        android:background="@drawable/background_gradient"
+        android:text="Submit for review"
+        android:padding="8dp"
+        android:fontFamily="@font/biryani_semibold"
+        />
+
+
 
 
 </LinearLayout>
