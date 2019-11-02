@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewStatus">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PROFILE"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="226dp"
+            android:layout_height="236dp"
+            android:layout_margin="20dp"
+            android:src="@raw/photo2"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FROM THE TEAM"
+            android:fontFamily="@font/biryani_semibold"
+            android:textSize="30sp"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*We are currently reviewing your report\n*and you will be contacted(Via email) soon"
+            android:textSize="16sp"
+            android:textColor="#ff0000"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="8dp"
+            />
+
+    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Your Reports"
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@raw/road1"/>
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@raw/road2"
+            android:layout_marginBottom="12dp"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

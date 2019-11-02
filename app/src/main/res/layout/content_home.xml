@@ -24,6 +24,7 @@
             android:layout_height="160dp"
             android:layout_margin = "10dp"
             android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp"
 
@@ -79,11 +80,12 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/money"
             android:layout_width="160dp"
-            android:layout_height="160dp"
+            android:layout_height="200dp"
             android:layout_margin = "10dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp"
             android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
 
             >
             <LinearLayout
@@ -98,14 +100,15 @@
                     android:layout_height="64dp"
                     android:background="@drawable/icon_back"
                     android:padding="10dp"
-                    app:srcCompat="@drawable/ic_attach_money_black_24dp" />
+                    app:srcCompat="@drawable/ic_timeline_black_24dp" />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CHOOSE ACCOUNT"
-                    android:textStyle="bold" />
+                    android:text="TRACK YOUR REPORTS"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
 
                 <View
                     android:id="@+id/home_view"
@@ -119,7 +122,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="Select account type" />
+                    android:text="We are constantly reaching out for you " />
 
             </LinearLayout>
 
@@ -128,11 +131,12 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/listings"
             android:layout_width="160dp"
-            android:layout_height="160dp"
+            android:layout_height="200dp"
             android:layout_margin = "10dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp"
             android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
 
             >
             <LinearLayout
@@ -154,7 +158,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CHECK ROAD LISTINGS"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
 
                 <View
                     android:id="@+id/home_view5"
@@ -168,7 +173,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="Select account type" />
+                    android:text="View enlisted bad roads" />
 
             </LinearLayout>
 
